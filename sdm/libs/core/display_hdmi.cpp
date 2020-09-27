@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2014 - 2018, 2020 The Linux Foundation. All rights reserved.
+* Copyright (c) 2014 - 2018, The Linux Foundation. All rights reserved.
 *
 * Redistribution and use in source and binary forms, with or without modification, are permitted
 * provided that the following conditions are met:
@@ -209,8 +209,7 @@ uint32_t DisplayHDMI::GetBestConfigFromFile(std::ifstream &res_file, DisplayInte
     vics[index] = attrib[index].vic;
   }
   try {
-    char cr = '\r';
-    while (std::getline(res_file, line, cr)) {
+    while (std::getline(res_file, line)) {
       char hash = '#';
       std::size_t found = 0;
       found = line.find(hash);

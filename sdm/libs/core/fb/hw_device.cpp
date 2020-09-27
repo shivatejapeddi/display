@@ -1409,9 +1409,5 @@ DisplayError HWDevice::GetDynamicDSIClock(uint64_t *bit_clk_rate) {
   return kErrorNotSupported;
 }
 
-DisplayError HWDevice::SetDisplayFormat(uint32_t index, DisplayInterfaceFormat fmt) {
-  return kErrorNotSupported;
-}
-
 }  // namespace sdm
 

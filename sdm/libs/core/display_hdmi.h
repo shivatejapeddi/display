@@ -62,7 +62,6 @@ class DisplayHDMI : public DisplayBase, HWEventHandler {
 
  private:
   uint32_t GetBestConfig(HWS3DMode s3d_mode);
-  uint32_t GetBestConfigFromFile(std::ifstream &res_file, DisplayInterfaceFormat *format);
   void GetScanSupport();
   void SetS3DMode(LayerStack *layer_stack);
   static const int kPropertyMax = 256;
@@ -73,7 +72,6 @@ class DisplayHDMI : public DisplayBase, HWEventHandler {
   std::vector<HWEvent> event_list_ = { HWEvent::VSYNC, HWEvent::IDLE_NOTIFY, HWEvent::EXIT,
     HWEvent::CEC_READ_MESSAGE };
   uint32_t current_refresh_rate_ = 0;
-  const uint32_t standard_vic_ = 127;
 };
 
 }  // namespace sdm

@@ -206,8 +206,6 @@ class HWCSession : hwc2_device_t, HWCUEventListener, IDisplayConfig, public qCli
                                  int32_t int_enabled);
   static int32_t GetDozeSupport(hwc2_device_t *device, hwc2_display_t display,
                                 int32_t *out_support);
-  static int32_t SetDisplayBrightness(hwc2_device_t *device, hwc2_display_t display,
-                                      float brightness);
 
   static Locker locker_[HWCCallbacks::kNumDisplays];
 

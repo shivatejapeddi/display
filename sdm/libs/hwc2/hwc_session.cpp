@@ -940,11 +940,6 @@ int32_t HWCSession::GetDozeSupport(hwc2_device_t *device, hwc2_display_t display
   return HWC2_ERROR_NONE;
 }
 
-int32_t HWCSession::SetDisplayBrightness(hwc2_device_t *device, hwc2_display_t display,
-                                         float brightness) {
-    return HWC2_ERROR_UNSUPPORTED;
-}
-
 int32_t HWCSession::ValidateDisplay(hwc2_device_t *device, hwc2_display_t display,
                                     uint32_t *out_num_types, uint32_t *out_num_requests) {
   //  out_num_types and out_num_requests will be non-NULL
@@ -1014,8 +1009,6 @@ hwc2_function_pointer_t HWCSession::GetFunction(struct hwc2_device *device,
       return AsFP<HWC2_PFN_GET_HDR_CAPABILITIES>(GetHdrCapabilities);
     case HWC2::FunctionDescriptor::GetDozeSupport:
       return AsFP<HWC2_PFN_GET_DOZE_SUPPORT>(GetDozeSupport);
-    case HWC2::FunctionDescriptor::SetDisplayBrightness:
-      return AsFP<HWC2_PFN_SET_DISPLAY_BRIGHTNESS>(SetDisplayBrightness);
     case HWC2::FunctionDescriptor::GetMaxVirtualDisplayCount:
       return AsFP<HWC2_PFN_GET_MAX_VIRTUAL_DISPLAY_COUNT>(GetMaxVirtualDisplayCount);
     case HWC2::FunctionDescriptor::GetReleaseFences:
